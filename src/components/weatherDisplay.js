@@ -1,8 +1,8 @@
 
 export default async location => {
    
-    const KEY = process.env.REACT_APP_API_KEY.slice(0, -1)
-   
+    const KEY = process.env.REACT_APP_API_KEY
+   console.log(KEY)
     try {
         const result = await fetch(
             `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${KEY}&units=metric`,
