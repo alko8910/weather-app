@@ -1,14 +1,14 @@
 
 export default async location => {
    
-    const KEY = process.env.APP_KEY;
-   console.log(KEY)
+    const KEY = process.env.REACT_APP_API_KEY.slice(0, -1)
+   
     try {
         const result = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${KEY}&units=metric`,
+            `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${KEY}&units=metric`,
              
         );
-
+        console.log(result)
         if (result.status === 200) {
             return { success: true, data: await result.json() };
         }
